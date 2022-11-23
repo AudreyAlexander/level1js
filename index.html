@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--Audrey Alexander, Period 7/8, Section 85, 11/23/22-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function initialize()
+        {
+            totalOutput = document.getElementById("totals");
+            pennyOutput = document.getElementById("pennies");
+            dimeOutput = document.getElementById("dimes");
+            nickleOutput = document.getElementById("nickles");
+            quarterOutput = document.getElementById("quarters");
+            numpennies = 0;
+            numnickles = 0;
+            numdimes = 0;
+            numquarters = 0;
+            totalval = 0;
+            display();
+        }
+        function addpenny(){
+            numpennies ++;
+            display();
+        }
+        function addnickle(){
+            numnickles ++; 
+            display();
+        }
+        function adddime(){
+            numdimes ++;
+            display();
+        }
+        function addquarter(){
+            numquarters ++;
+            display();
+        }
+        function total(){
+            totalval = ((numpennies * 0.01) + (numnickles * 0.05) + (numdimes * 0.10) + (numquarters * 0.25)).toFixed(2);
+            display();
+        }
+        function display(){
+            pennyOutput.innerHTML = numpennies * 0.01;
+            nickleOutput.innerHTML = (numnickles * 0.05).toFixed(2);
+            dimeOutput.innerHTML = (numdimes * 0.10).toFixed(2);
+            quarterOutput.innerHTML = numquarters * 0.25;
+            totalOutput.innerHTML = totalval;
+        }
+    </script>
+</head>
+<body onload = "initialize();">
+    <h1>Total: </h1>
+    <h1 id="totals"></h1>
+    <h2>Pennies: </h2>
+    <h2 id="pennies"></h2>
+    <h2>Nickles: </h2>
+    <h2 id="nickles"></h2>
+    <h2>Dimes: </h2>
+    <h2 id="dimes"></h2>
+    <h2>Quarters:</h2>
+    <h2 id="quarters"></h2>
+    <hr />
+    <button onclick = "addpenny();">Add a Penny</button>
+    <button onclick = "addnickle();">Add a Nickle</button>
+    <button onclick = "adddime();">Add a Dime</button>
+    <button onclick = "addquarter();">Add a Quarter</button>
+    <button onclick = "total();">Find Total</button>
+   
+ 
+   
+</body>
+</html>
